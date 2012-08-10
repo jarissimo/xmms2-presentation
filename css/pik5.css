@@ -1,0 +1,36 @@
+/*
+ * this file is stolen from Pik5 by Peter Kröner, but was heavily adapted for my presentation.
+ * http://pik5.peterkroener.de/
+ */
+
+html {
+    height:100%;
+}
+
+body {
+    height:100%;
+	font-size:100%;
+	margin:0;
+	padding:0;
+}
+
+#frame {
+    height:100%;
+	position:relative;
+}
+
+#framecontainer {
+    /* -webkit-transition: left 1s ease-in-out; */
+    height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.pik5-slide {
+	width:100%;
+	height:100%;
+	float:left;
+	margin:0;
+	padding:0;
+}

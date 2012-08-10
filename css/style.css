@@ -1,0 +1,143 @@
+@font-face {
+	font-family: 'Annie';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../data/AnnieUseYourTelescope.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Elite';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../data/SpecialElite.ttf') format('truetype');
+}
+
+
+/* Basics */
+body {
+	font-family: Annie;
+	background:#000;
+	color:#FFF;
+	line-height:1.5;
+}
+
+h2 {
+	text-align:center;
+	font-size:2.0em;
+	margin:1.5em 0.6em 1em 0.6em;
+}
+p, ul, ol, pre {
+	font-size:1.4em;
+	margin:1em
+}
+
+a {
+	text-decoration:none;
+	color:#FFF;
+	font-weight:bold;
+}
+a:link {
+	border-bottom:none;
+}
+a:visited {
+	border-bottom:none;
+}
+a:hover {
+	border-bottom:2px solid transparent;
+}
+a:active {
+	color:#C00;
+	border-bottom:2px solid transparent;
+}
+
+/* Rahmen */
+.highlight-box {
+	text-align: center; 
+	color: black; 
+	background-color: grey; 
+	-webkit-border-radius: 15px; 
+	padding: 10px;
+}
+
+
+/******* Styles for individual slides *******/
+
+/* start slide */
+#start h2 {
+	font-size:5em;
+	margin-top:0.5em;
+	margin-bottom:-0.5em;
+}
+#start p {
+	text-align:center;
+	font-size:1.5em;
+	/*margin-top:-3.2em;*/
+}
+#start img {
+	margin-top:0.8em;
+}
+
+/* Motivation */
+#motivation p {
+	font-size: 250%;
+}
+
+/* audio-players */
+#audio-players ul#logo-grid li {
+	list-style: none outside;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	width: 200px;
+	height: 180px;
+	text-align: center;
+	font-size: 0.5em;
+}
+#audio-players ul#logo-grid li p {
+	margin-top: -0.2em;
+}
+#audio-players ul#logo-grid li img {
+  vertical-align: middle;
+}
+
+/* developers */
+.overlay {
+   background-color: #000;
+   opacity: 0.5;
+   position: absolute; top: 0; left: 0;
+   width: 100%; height: 100%;
+   z-index: 10;
+}
+
+/* collections 2.0 use case */
+.codebox {
+	font-family: Elite;
+	font-size: 1.3em;
+	text-align: center;
+}
+.coll2use-madonna {
+	color: rgb(20,180,20);
+}
+.coll2use-90s {
+	color: rgb(255,160,28);
+}
+.coll2use-favourite {
+	color: rgb(255, 0, 0);
+}
+
+/* technologies: s4 */
+#s4 table {
+	padding: 10px;
+	background-color: rgb(30, 30, 30); 
+	-webkit-border-radius: 15px; 
+	margin-left:14.5em;
+	margin-top:-5em;
+	text-align:center;
+	font-size:1.2em;
+	-webkit-transform:rotate(4.5deg);
+	/*-webkit-transform:translate(0, -50px);*/
+}
+
+#s4 td, th {
+	padding-right:10px;
+}

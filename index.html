@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>XMMS2</title>
+	<meta http-equiv="expires" content="0">
+
+	<link rel="stylesheet" media="screen, projection" href="css/pik5.css">
+	<link rel="stylesheet" media="screen, projection" href="css/style.css">
+	<link rel="stylesheet" media="screen, projection, print" href="css/timeline.css">
+    
+	<script src="js/jquery-1.5.2.min.js"></script>
+	<script src="js/pik5.js"></script>
+	<script src="js/ellipse.js"></script>
+	<!--<script src="js/bar.js"></script>
+	<script src="js/typewriter.js"></script>-->
+</head>
+
+<div id="frame">
+<div id="framecontainer">
+
+<div class="pik5-slide" id="start">
+	<h2>XMMS2</h2>
+	<p>
+		kick-ass music player
+	</p>
+	<p><img src="img/logos/xmms2-large.png" width="250" height="250" /></p>
+</div>
+
+<div class="pik5-slide" id="motivation">
+	<h2>Motivation</h2>
+	<ul>
+	<li>Why bother about audio players?</li>
+	</ul>
+	<p class="highlight-box" id="message" style="opacity:0;">Because usability matters.</p>
+	<p style="text-align: center;font-size:1.2em; opacity:0;" id="submessage">(especially for every day software)</p>
+	<script>
+		jQuery(document).ready(function($){
+	    	var animations = new Array(
+				function() {
+					$('#motivation #message').animate({opacity: 1.00}, 400, function() {
+						setTimeout(function() {
+							$('#motivation #submessage').css('opacity', 1.0);
+						}, 1000);
+					});
+				}
+			);
+			PIK5.animations["motivation"] = animations;
+		});
+	</script>
+</div>
+
+<div class="pik5-slide" id="audio-players">
+	<h2>Linux audio players</h2>
+	<p style="text-align: center;">	
+	<ul id="logo-grid">
+	<li class="itunes-like">
+		<img src="img/logos/banshee.png" />
+		<p>banshee</p>
+	</li>
+	<li class="itunes-like">
+		<img src="img/logos/amarok.png" />
+		<p>amarok</p>
+	</li>
+	<li class="winamp-like">
+		<img src="img/logos/audacious.png" />
+		<p>audacious</p>
+	</li>
+	<li class="itunes-like">
+		<img src="img/logos/exaile.png" />
+		<p>Exaile</p>
+	</li>
+	<li class="daemon-like">
+		<img src="img/logos/xmms2.png" />
+		<p>XMMS2</p>
+	</li>
+	<li class="winamp-like">
+		<img src="img/logos/deadbeef.png" />
+		<p>DeaDBeeF</p>
+	</li>
+	<li class="itunes-like">
+		<img src="img/logos/realplayer.png" />
+		<p>RealPlayer</p>
+	</li>
+	<li class="winamp-like">
+		<img src="img/logos/quodlibet.png" />
+		<p>Quod Libet</p>
+	</li>
+	<li class="daemon-like">
+		<img src="img/logos/mpd.png" />
+		<p>MPD</p>
+	</li>
+	<li class="itunes-like">
+		<img src="img/logos/rhythmbox.png" />
+		<p>Rhythmbox</p>
+	</li>
+	</ul>
+	</p>
+	<script>
+		jQuery(document).ready(function($){
+			var logos = $('#logo-grid li');
+	    	var animations = new Array(
+				function() {
+					$('.itunes-like').animate({opacity: 0.15}, 500);
+					$('.daemon-like').animate({opacity: 1.00}, 500);
+				},
+				function() {
+					$('.winamp-like').animate({opacity: 0.15}, 500);
+					$('.itunes-like').animate({opacity: 1.00}, 500);
+				},
+				function() {
+					$('.daemon-like').animate({opacity: 0.15}, 500);
+					$('.itunes-like').animate({opacity: 0.15}, 500);
+				}
+			);
+			PIK5.animations["audio-players"] = animations;
+			$('#audio-players').bind({
+				'deactivate': function(){
+					$('.winamp-like').animate({opacity: 1.00}, 100);
+					$('.itunes-like').animate({opacity: 1.00}, 100);
+				}
+			});
+		});
+	</script>
+</div>
+
+<div class="pik5-slide" id="ubuntu-popcon">
+	<h2>Ubuntu popularity contest</h2>
+	<p style="text-align: center;">	
+	<img src="img/ubuntu-popcon.png" width="646px" height="580px"/>
+	</p>
+</div>
+
+<!--
+<div class="pik5-slide" id="historytest">
+	<h1 id="testh2" style="font-size:2.4em; text-align: center;"></h1>
+	<script>
+		jQuery(document).ready(function($){
+	    	var animations = new Array(
+				function() {
+					tw.typewriter($('#testh2'), "Project history", 500);
+				}
+			);
+			PIK5.animations["historytest"] = animations;
+		});
+	</script>
+</div>
+-->
+
+<div class="pik5-slide" id="xmms-screenshot">
+	<h2>Good old XMMS</h2>
+	<p style="text-align: center;">	
+		<img src="img/xmms-screenshot.png" />
+	</p>
+</div>
+
+<div class="pik5-slide" id="xmms-gentoo">
+	<h2>Farewell</h2>
+	<p style="text-align: center;">	
+		<img src="img/xmms-gentoo.png" />
+	</p>
+</div>
+
+<div class="pik5-slide" id="history">
+	<h2>History</h2>
+	<div class="timeline">
+		<ul class="events">
+			<li style="width: 53.33%; left: 0; opacity:0;" id="xmms">XMMS <em>(1997-2004)</em></li>
+			<li style="width: 26.66%; left: 0; opacity:0;" id="bmp">BMP <em>(2002-2005)</em></li>
+			<li style="width: 26.66%; left: 32%; opacity:0;" id="bmpx">BMPx <em>(2005-2009)</em></li>
+			<li style="width: 6.66%; left: 56%; opacity:0;" id="mpx">MPX</li>
+			<li style="width: 43%; left: 32%; opacity:0;" id="audacious">Audacious <em>(2005-2011)</em></li>
+			<li style="width: 69%; left: 0; opacity:0;" id="xmms2">XMMS2 <em>(2002-2011)</em></li>
+		</ul>
+
+		<ul class="intervals">
+			<li class="first">1997</li>
+			<li>1999</li>
+			<li>2001</li>
+			<li>2003</li>
+			<li>2005</li>
+			<li>2007</li>
+			<li>2009</li>
+			<li class="last">2011</li>
+		</ul>
+	</div>
+	<script>
+		$(document).ready(function($){
+            animations = new Array(
+				function() {
+					$('#history #xmms2').animate({opacity: 1}, 100);
+					$('#history #xmms2').animate({left: '30%'}, 500);
+				},
+                function() {
+					$('#history #audacious').animate({opacity: 1.00}, 100);
+					$('#history #audacious').animate({left: '56%'}, 500);
+                },
+                function() {
+					$('#history #bmpx').animate({opacity: 1.00}, 100);
+					$('#history #bmpx').animate({left: '56%'}, 500);
+					$('#history #mpx').animate({opacity: 1.00}, 100);
+					$('#history #mpx').animate({left: '82.66%'}, 400);
+                },
+                function() {
+					$('#history #bmp').animate({opacity: 1.00}, 100);
+					$('#history #bmp').animate({left: '32%'}, 500);
+                },
+                function() {
+					$('#history #xmms').animate({opacity: 1.00}, 300);
+                }
+            );
+            PIK5.animations["history"] = animations;
+		});
+	</script>
+</div>
+
+<div class="pik5-slide" id="development">
+	<h2>Development process</h2>
+	<p>
+	<ul>
+		<li>~10 core developers</li>
+		<li>usual tools</li>
+		<li>slow progress</li>
+		<li>hackathons</li>
+		<li id="gsoc">Google Summer of Code</li>
+	</ul>
+	</p>
+	<script>
+		jQuery(document).ready(function($){
+			$('#development #gsoc').css('-webkit-transition', 'color 0.5s ease-in-out');
+            animations = new Array(
+                function() {
+                    $('#development #gsoc').css('color', '#FF0000');
+                },
+				function() {
+					var overlay = document.getElementById("overlay");
+					$(overlay).animate({opacity: 0.0}, 250, function() {
+						document.body.removeChild(overlay);
+					});
+				},
+				function () {
+					var overlay = document.createElement("div");
+					overlay.setAttribute("id", "overlay");
+					$(overlay).addClass('overlay');
+					var content = $("<p style=\"text-align:center;\"><img src=\"img/developers.png\" /></p>")
+					$(overlay).append(content);
+					$(overlay).css('opacity', 0.0);
+					document.body.appendChild(overlay);
+					$(overlay).animate({opacity: 1.0}, 400);
+				}
+            );
+            PIK5.animations["development"] = animations;
+		});
+	</script>
+</div>
+
+<div class="pik5-slide" id="gsoc">
+	<h2>GSoC 2010</h2>
+	<div style="-webkit-column-count: 2; max-height:400px;">
+		<ul style="max-width:500px;">
+			<li>Oritide: HTML5 client for mobile phones</li>
+			<li>Crossfade plugin</li>
+			<li>Coll2.0 + S4</li>
+		</ul>
+		<p style="text-align: center;">
+			<img src="img/oritide.png" style="display:inline;"/>
+		</p>
+	</div>
+</div>
+
+
+<div class="pik5-slide" id="coll2">
+	<h2>Technologies: Collections 2.0</h2>
+	<ul>
+	<li>concepts of set theory</li>
+	<li>&quot;collections&quot; can be sets or lists of media</li>
+	<li>operators: UNION, INTERSECTION, COMPLEMENT, CONCAT...</li>
+	</ul>
+</div>	
+
+<div class="pik5-slide" id="coll2use">
+	<h2>Use case</h2>
+	<p style="text-align: center;">	
+	<canvas id="coll2use-canvas" width="900" height="300" />
+	</p>
+	<p class="codebox" id="coll2use-codebox">Universe</p>
+	<script>
+		jQuery(document).ready(function($){
+			cd.canvas = document.getElementById("coll2use-canvas");
+			cd.ctx = cd.canvas.getContext('2d');
+			cd.ctx.font = 'bold 45px Annie';
+			cd.ctx.textBaseline = 'top';
+
+			cd.drawEllipse(450, 150, 445, 148, 'rgb(255,255,255)', 4);
+
+	    	var animations = new Array(
+				function() {
+					color = 'rgb(255, 0, 0)';
+					cd.drawAnimatedEllipse(220, 115, 190, 42, color, 2, 350, function() {
+						cd.ctx.fillStyle = color;
+						cd.ctx.fillText('favourite playlist', 90, 85);
+					});
+					$('#coll2use-codebox').prepend('<span class="coll2use-favourite">UNION(</span>');
+					$('#coll2use-codebox').append('<span class="coll2use-favourite">, FavouritePlaylist)</span>');
+				},
+				function() {
+					color = 'rgb(255,160,28)';
+					cd.drawAnimatedEllipse(520, 210, 225, 50, color, 2, 300, function() {
+						cd.ctx.fillStyle = color;
+						cd.ctx.fillText('>= \'90', 510, 170);
+					});
+					$('#coll2use-codebox').prepend('<span class="coll2use-90s">GREATER(</span>');
+					$('#coll2use-codebox').append('<span class="coll2use-90s">, &quot;year&quot;, 1990)</span>');
+				},
+				function() {
+					color = 'rgb(20,180,20)';
+					cd.drawAnimatedEllipse(435, 138, 40, 65, color, 2, 400, function() {
+						cd.ctx.fillStyle = color;
+						cd.ctx.fillText('Madonna', 400, 45);
+						$('#coll2use-codebox').prepend('<span class="coll2use-madonna">EQUALS(</span>');
+						$('#coll2use-codebox').append('<span class="coll2use-madonna">, &quot;artist&quot;, &quot;Madonna&quot;)</span>');
+					});
+									
+				}
+			);
+			PIK5.animations["coll2use"] = animations;
+		});
+	</script>
+</div>
+
+<div class="pik5-slide" id="s4">
+	<h2>Technologies: S4</h2>
+	<ul>
+		<li>new database backend</li>
+		<li>optimized for strings</li>
+		<li>one relation per file:</li>
+	</ul>
+	<table id="s4-example">
+		<tr>
+			<th>key</th>
+			<th>value</th>
+			<th>source</th>
+		</tr>
+		<tr>
+		<tr>
+			<td>url</td>
+			<td>file://media/mp3/Al...</td>
+			<td>server</td>
+		</tr>
+		<tr>
+			<td>title</td>
+			<td>Rastafari Anthem</td>
+			<td>plugin/id3v2</td>
+		</tr>
+		<tr>
+			<td>bitrate</td>
+			<td>192 (vbr)</td>
+			<td>plugin/mad</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</table>
+</div>
+
+<!--
+<div class="pik5-slide" id="s4-benchmark">
+	<h2><span style="color: rgb(0, 120, 255);">S4</span> vs. <span style="color: rgb(0, 20, 140);">sqlite</span></h2>
+	<p style="text-align:center;">
+	<canvas id="s4-canvas" width="1000px", height="500px"></canvas>
+	</p>
+	<script>
+		jQuery(document).ready(function($){
+			bd.canvas = document.getElementById("s4-canvas");
+			bd.ctx = bd.canvas.getContext('2d');
+			bd.duration = 500;
+			bd.ctx.font = 'bold 45px Annie';
+			bd.ctx.textBaseline = 'top';
+			bd.ctx.fillStyle = 'rgb(255,255,255)';
+
+			// Need to put this in a timeout as (maybe) fonts are not ready on startup
+			setTimeout(function() {
+				bd.ctx.fillText('"one"', 10, 0);
+				bd.ctx.fillText('"*"', 10, 100);
+				bd.ctx.fillText('"artist:Metallica"', 10, 200);
+				bd.ctx.fillText('"tracknr>30"', 10, 300);
+				bd.ctx.fillText('"+comment"', 10, 400);
+			}, 100);
+
+	    	var animations = new Array(
+				function() {
+					s4color = 'rgb(0, 77, 255)';
+					sqlitecolor = 'rgb(0, 20, 140)';
+					x = 300;
+					height = 22;
+					bd.addBar(x, 0, 5, height, s4color);
+					bd.addBar(x, 23, 680, height, sqlitecolor);
+					bd.addBar(x, 100, 350, height, s4color);
+					bd.addBar(x, 123, 680, height, sqlitecolor);
+					bd.addBar(x, 200, 300, height, s4color);
+					bd.addBar(x, 223, 680, height, sqlitecolor);
+					bd.addBar(x, 300, 20, height, s4color);
+					bd.addBar(x, 323, 680, height, sqlitecolor);
+					bd.addBar(x, 400, 180, height, s4color);
+					bd.addBar(x, 423, 680, height, sqlitecolor);
+					bd.animate(function() {
+						bd.ctx.font = 'bold 30px Annie';
+						bd.ctx.fillStyle = 'rgb(255,255,255)';
+
+					});
+				}
+			);
+			PIK5.animations["s4-benchmark"] = animations;
+		});
+	</script>
+</div>
+-->
+
+<div class="pik5-slide" id="summary">
+	<h2>What about &quot;usability&quot; ?</h2>
+	<ul>
+	<li id="test">client-server architecture <img style="display: inline;" src="img/check.png" /></li>
+	<li>interesting features (Coll2.0 + S4) <img style="display: inline;" src="img/check.png" /></li>
+	<li>active development <img style="display: inline;" src="img/check.png" /></li>
+	<li id="drawback">major drawback: clients are unusable</li>
+	</ul>
+	<script>
+
+		$(document).ready(function($){
+			$('#summary #drawback').css('-webkit-transition', 'color 0.5s ease-in-out');
+            animations = new Array(
+                function() {
+                    $('#summary #drawback').css('color', '#FF0000');
+                }
+            );
+            PIK5.animations["summary"] = animations;
+		});
+	</script>
+</div>
+
+<div class="pik5-slide" id="contribution">
+	<h2>Contribution</h2>
+	<ul>
+	<li>Help improving clients, eg. Abraca</li>
+	<li>Long-term plan: Integrate Last.fm tags</li>	
+	</ul>
+	<p style="text-align:center;">
+	<img src="img/abraca.png" />
+</div>
+
+<div class="pik5-slide" id="end">
+	<h2>Thank you.</h2>
+	<p style="text-align:center; margin-top: 4em;">
+	Visit <a href="http://xmms2.org/">http://xmms2.org/</a>.
+	</p>
+</div>
+
+</div> <!-- #framecontainer -->
+</div> <!-- #frame -->
+
+</body>
+</html>
+
